@@ -125,21 +125,16 @@ git push origin docs/update-mcp-reference-$(date +%Y%m%d)
 
 Then open a Pull Request on GitHub against `main`.
 
-### Setup Guide (antalpha-ai-setup — personal repo)
+### Setup Guide (antalpha-ai-setup — personal repo, direct push)
 
 ```bash
 cd /home/admin/.openclaw/workspace/skills/antalpha-ai-setup
-git fetch origin main
 git checkout main
 git pull origin main
-git checkout -b docs/update-setup-guide-$(date +%Y%m%d)
-# Copy the generated file to SKILL.md
 git add SKILL.md
 git commit -m "docs: auto-update setup guide from source code"
-git push origin docs/update-setup-guide-$(date +%Y%m%d)
+git push origin main
 ```
-
-Then open a Pull Request on GitHub against `main`.
 
 ---
 
