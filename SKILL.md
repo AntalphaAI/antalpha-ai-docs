@@ -105,28 +105,47 @@ The document must include these sections:
 
 After generating both files, commit and push to their respective repositories.
 
-### Technical Reference (antalpha-skills)
+### Rule: Always Update From Latest Main First
+
+Before creating the docs branch, always sync with the latest `main` branch.
+
+### Technical Reference (antalpha-skills — team repo)
 
 ```bash
 cd ~/antalpha-com/antalpha-skills
+git fetch origin main
+git checkout main
+git pull origin main
+git checkout -b docs/update-mcp-reference-$(date +%Y%m%d)
+# Copy the generated file to docs/mcp-documentation.md
 git add docs/mcp-documentation.md
 git commit -m "docs: auto-update MCP technical reference from source code"
-git push origin main
+git push origin docs/update-mcp-reference-$(date +%Y%m%d)
 ```
 
-### Setup Guide (antalpha-ai-setup)
+Then open a Pull Request on GitHub against `main`.
+
+### Setup Guide (antalpha-ai-setup — personal repo)
 
 ```bash
 cd /home/admin/.openclaw/workspace/skills/antalpha-ai-setup
+git fetch origin main
+git checkout main
+git pull origin main
+git checkout -b docs/update-setup-guide-$(date +%Y%m%d)
+# Copy the generated file to SKILL.md
 git add SKILL.md
 git commit -m "docs: auto-update setup guide from source code"
-git push origin main
+git push origin docs/update-setup-guide-$(date +%Y%m%d)
 ```
+
+Then open a Pull Request on GitHub against `main`.
 
 ---
 
 ## Important Notes
 
+- **Always sync from main first.** Before creating any docs branch, always run `git fetch origin main` and `git pull origin main`. The docs branch must be based on the latest main.
 - **Always read source code.** Do not assume tools are unchanged based on past knowledge. Re-read every `*.tools.ts` file on each run.
 - **Do not use changelogs or human-written docs as a source of truth.** Only the source code is authoritative.
 - **Preserve the format of the reference documents.** The technical reference and setup guide must follow the exact structure shown in the reference files.
