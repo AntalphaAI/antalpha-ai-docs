@@ -10,6 +10,8 @@
 
 Every time the MCP server tools change, run this skill to regenerate the technical reference and setup guide — no manual editing required.
 
+> ⚠️ **Internal maintainer tool.** This skill regenerates docs from the **private** `antalpha-skills` source monorepo and requires a local clone of it plus git push access to Antalpha repos. It is **not usable by external users**. If you just want to *connect to* the Antalpha MCP server, see **[antalpha-ai-setup](https://github.com/AntalphaAI/antalpha-ai-setup)** instead.
+
 ## What It Does
 
 | Step | Action |
@@ -72,6 +74,8 @@ Update antalpha-ai-setup SKILL.md after today's changes
 **自动从源码生成并同步 Antalpha Skills MCP 文档。**
 
 每次 MCP Server 工具有变更，运行此 Skill 即可自动重新生成技术参考文档和安装指南，无需手动编辑。
+
+> ⚠️ **内部维护工具。** 此 Skill 从**私有**的 `antalpha-skills` 源码 monorepo 生成文档，需要本地已克隆该私有仓，并具备对 Antalpha 仓库的 git push 权限，**外部用户无法使用**。如果你只是想*接入* Antalpha MCP 服务器，请改用 **[antalpha-ai-setup](https://github.com/AntalphaAI/antalpha-ai-setup)**。
 
 ## 功能概览
 
